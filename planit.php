@@ -81,12 +81,7 @@ class API {
   public function getTodos() {
 	  return $this->get('todos');
   } 
-  public function createTodo($note = '', $isDone = false, $client = null) {
-	  $obj = [
-		'note' => $note,
-		'isDone' => $isDone
-	  ];
-	  if(isset($client)) $obj['client'] = $clientId;
+  public function createTodo($obj) {
 	  return $this->create('todos', $obj);
   }
   public function updateTodo($obj) {
